@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Solnova is a sleek digital agency specializing in web design, development, and branding. Launching July 2025." />
+    <title>Solnova | Coming Soon</title>
+    <link rel="icon" href="assets/logo/solnova-logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 flex flex-col min-h-screen text-center px-6 py-10 font-sans">
+
+    <!-- HEADER -->
+    <header class="fade-in space-y-4 mb-20">
+        <img src="assets/logo/solnova-logo.png" alt="Solnova Logo" class="w-32 mx-auto" />
+        <h1 class="text-5xl font-bold text-gray-800">Solnova</h1>
+        <p class="text-xl text-gray-600 italic">Your Vision, Digitally Delivered</p>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Crafting sleek websites, digital branding, and design
+            solutions. Launching Soon.</p>
+    </header>
+
+    <!-- COUNTDOWN -->
+    <div id="countdown" class="text-2xl text-orange-500 font-bold mb-16 fade-in"></div>
+
+    <!-- EMAIL FORM -->
+    <div class="newsletter mb-24 fade-in">
+        <form class="flex justify-center flex-wrap gap-3">
+            <input type="email" placeholder="Enter your email" required
+                class="px-4 py-3 border-2 border-gray-800 rounded-l-md w-72" />
+            <button type="submit"
+                class="px-6 py-3 bg-gray-800 text-white rounded-r-md hover:bg-gray-700 font-semibold transition">Notify
+                Me</button>
+        </form>
+    </div>
+
+    <!-- PROJECTS -->
+    <section class="mb-32 fade-in">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Selected Projects</h2>
+        <div class="flex flex-wrap justify-center gap-10">
+            <div class="bg-gray-100 p-6 rounded-lg shadow w-72 space-y-2">
+                <h3 class="text-lg font-bold">Website Redesign</h3>
+                <p class="text-sm text-gray-600">A clean and modern interface for a growing tech startup.</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow w-72 space-y-2">
+                <h3 class="text-lg font-bold">Brand Identity</h3>
+                <p class="text-sm text-gray-600">Logo, typography, and design assets for a marketing agency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCROLL TO TOP -->
+    <button onclick="scrollToTop()"
+        class="fixed bottom-6 right-6 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700">⬆️</button>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto fade-in pt-16 border-t border-gray-200">
+        <div class="social-icons flex justify-center space-x-6 mb-4">
+            <a href="https://www.instagram.com/solnovaagency/" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="w-6 h-6" />
+            </a>
+            <a href="https://www.linkedin.com/company/solnova/" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="w-6 h-6" />
+            </a>
+        </div>
+        <p class="text-sm text-gray-500 mb-6">© 2025 Solnova. All rights reserved. | <a href="mailto:hello@solnova.net"
+                class="underline">hello@solnova.net</a></p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        function countdown() {
+            const launchDate = new Date("July 1, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const gap = launchDate - now;
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const d = Math.floor(gap / day);
+            const h = Math.floor((gap % day) / hour);
+            const m = Math.floor((gap % hour) / minute);
+            const s = Math.floor((gap % minute) / second);
+
+            document.getElementById("countdown").innerText = `${d}d ${h}h ${m}m ${s}s until launch`;
+        }
+
+        countdown();
+        setInterval(countdown, 1000);
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+
+</html>
